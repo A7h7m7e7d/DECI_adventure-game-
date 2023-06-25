@@ -4,6 +4,7 @@ import random
 
 score = 0
 current_time = 0
+x= input(" your name: ")
 
 def sit1():
     global current_time
@@ -89,6 +90,7 @@ def examine_the_corpse():
         searching_for_gun()
 
 def talking_with_the_sus():
+    global score
     print_pause("The initial suspect in question is Wahid, a French doctor. When questioned about his connection to the victim, Wahid claimed that he had never encountered the deceased individual before and that this was their first meeting.")
     print_pause("Another individual present at the scene is identified as Cristena. She was not only a math teacher but also hails from France. When questioned about her knowledge of the deceased, she claims to have seen him for the first time.")
     print_pause("After a thorough examination of the deceased individual, several significant findings emerged.")
@@ -108,6 +110,7 @@ def talking_with_the_sus():
         sit1()
 
 def finding_the_killer():
+    global score
     print_pause("Who is the killer?")
     print_pause("(1) Wahid.")
     print_pause("(2) Cristena.")
@@ -182,6 +185,7 @@ def situ2():
     print_pause("2- Ask the woman about its descriptions")
     ch = choice()
     global x
+
     if ch == "1":
         score += 5
         print("Good choice, " + x + "! Your score is " + str(score))
@@ -199,6 +203,7 @@ def descriptions():
     ch = choice()
 
     if ch == "1":
+        global  score
         score += 10
         print("Good choice, " + x + "! Your score is " + str(score))
         ask_for_sus()
@@ -214,6 +219,7 @@ def searching_for_the_ring():
     print_pause("2- Ask for the suspects")
 
     ch = choice()
+    global score
     score += 10
     if ch == "1":
         print("Good choice, " + x + "! Your score is " + str(score))
@@ -230,6 +236,7 @@ def ask_for_sus():
     print_pause("2- Ask for descriptions again")
 
     ch = choice()
+    global score
     if ch == "1":
         score += 10
         print("Good choice, " + x + "! Your score is " + str(score))
@@ -249,6 +256,7 @@ def inves_sus():
     print_pause("2- Play again to remember some information")
 
     ch = choice()
+    global score
     if ch == "1":
         score += 10
         print("Good choice, " + x + "! Your score is " + str(score))
@@ -261,6 +269,7 @@ def the_truth2():
     print_pause("The ring thief is:")
     print_pause("1- Ms. Sara")
     print_pause("2- Another one")
+    global score
     ch = choice()
     if ch == "1":
         print("Congratulations, " + x + "! You win. Sara is the thief because when you asked her about the ring, she said she didn't know anything about a red ring.")
@@ -321,6 +330,7 @@ def sit3():
         visit_home()
 
 def show_message():
+    global score
     print_pause("The message is 'Sorry I left because I think you did not care about me, so I will "
                 "leave for you a puzzle to test your knowledge about your son. The puzzle is "
                 "'the other message in my biggest A'.")
@@ -345,7 +355,7 @@ def visit_home():
     print_pause("What will you do now?")
     print_pause("(1) Ask her about her son and his interests.")
     print_pause("(2) Share your inference.")
-
+    global score
     ch = choice()
     if ch == "1":
         score += 10
@@ -364,7 +374,7 @@ def about_son():
     print_pause("What will you do now?")
     print_pause("(1) Share your inference.")
     print_pause("(2) Visit his room.")
-
+    global score
     ch = choice()
     if ch == "1":
         score += 10
@@ -383,7 +393,7 @@ def inference():
     print_pause("Do you now know what is meant by 'my biggest A'?")
     print_pause("(1) Eiffel Tower")
     print_pause("(2) The letter 'A' in the word 'France'.")
-
+    global score
     ch = choice()
     if ch == "1":
         score += 10
@@ -394,6 +404,7 @@ def inference():
         letter()
 
 def eiffel():
+    global score
     global current_time
     current_time1 = datetime.datetime.now()
     print("Congratulations, " + x + "! Your score is: " + str(score + 50) + " and you took " + str(current_time1 - current_time) + " to find the solution.")
@@ -413,6 +424,7 @@ def eiffel():
         print("Thank you for playing!")
 
 def letter():
+    global score
     global current_time
     current_time1 = datetime.datetime.now()
 
@@ -437,7 +449,7 @@ def sit3():
     global score
     score = 0
     current_time = datetime.datetime.now()
-
+    global x
     print("Hi ", x)
 
     print_pause("When you were staying in your office, someone knocked on the door and said, "
@@ -470,5 +482,6 @@ while True:
     print_pause("This is a website to make all things clear. I have created it.")
     print_pause("https://a7h7m7e7d.github.io/DECI/web.html")
     sleep(2)
-    random.choice([sit1, situ2, sit3])()
+    #random.choice([sit1, situ2, sit3])()
+    sit3()
     break
