@@ -169,7 +169,7 @@ def the_truth():
 
 def print_pause(x):
     print(x)
-    sleep(0.1)
+    sleep(3)
 def situ2():
     global score
     score = 0
